@@ -5,21 +5,21 @@
 class Stackit < Formula
   desc "Command-line tool for managing stacked changes in Git"
   homepage "https://github.com/jonnii/stackit"
-  version "0.1.0"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jonnii/stackit/releases/download/v0.1.0/stackit_Darwin_x86_64.tar.gz"
-      sha256 "8f2b52449bc00e37e89a58c536b4c26bafbd84293a131232bba8e2e012ec6104"
+      url "https://github.com/jonnii/stackit/releases/download/v0.3.0/stackit_Darwin_x86_64.tar.gz"
+      sha256 "9f6ef2aaded45018d7e48a8b9234931727364a0bc149ff71c221b9f52a6ba90f"
 
       def install
         bin.install "stackit"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/jonnii/stackit/releases/download/v0.1.0/stackit_Darwin_arm64.tar.gz"
-      sha256 "04e814512dddfb40e86bfeaf7a269dfb8320acadbc475af1f92e6f67a08fc65b"
+      url "https://github.com/jonnii/stackit/releases/download/v0.3.0/stackit_Darwin_arm64.tar.gz"
+      sha256 "4fcf7b1570f11af9659eb80c05800b9ac0c431413d89bd543bb28a9c8f892e6b"
 
       def install
         bin.install "stackit"
@@ -29,15 +29,15 @@ class Stackit < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jonnii/stackit/releases/download/v0.1.0/stackit_Linux_x86_64.tar.gz"
-      sha256 "e9afaaf7fa0077c078f14e16a6f3a874bffb788b85a56f3f21719d1b3be21be8"
+      url "https://github.com/jonnii/stackit/releases/download/v0.3.0/stackit_Linux_x86_64.tar.gz"
+      sha256 "9c3961d049dc502ce91508e60895883abb57c008bed7f6581f6932004330a628"
       def install
         bin.install "stackit"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jonnii/stackit/releases/download/v0.1.0/stackit_Linux_arm64.tar.gz"
-      sha256 "fe1a8855a5d9d50d21bc31cad6f4a16b509fde5241f63ddf44e6a901eb8dde3c"
+      url "https://github.com/jonnii/stackit/releases/download/v0.3.0/stackit_Linux_arm64.tar.gz"
+      sha256 "223152b50d048d47e589a2daacf200f7b430a010cadd5d119526992eb22de2a9"
       def install
         bin.install "stackit"
       end
@@ -45,6 +45,6 @@ class Stackit < Formula
   end
 
   test do
-    system "#{bin}/stackit", "version"
+    system "#{bin}/stackit", "--version"
   end
 end
